@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { UserRequest } from './models/UserRequest';
+import { UserResponse } from './models/UserResponse';
 import { AuthService } from './services/auth.service';
+import { UserService } from './services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +12,12 @@ import { AuthService } from './services/auth.service';
 export class AppComponent {
   title = 'Angular-Auth';
   user = new UserRequest();
+  userList:  UserResponse[]=[];
 
-  constructor(private authService: AuthService){}
+  constructor(
+    private authService: AuthService
+    ,private userService: UserService
+  ){}
 
   register(user:UserRequest){
     this.authService.register(user).subscribe();
@@ -20,7 +26,7 @@ export class AppComponent {
   login(user:UserRequest){
     this.authService.login(user).subscribe(
       (token : string) => {
-        localStorage.setItem('authToken', token);
+        localStorage.setItem('authToken', token);    
       }
     );
   }
@@ -30,6 +36,12 @@ export class AppComponent {
       (name : string) => {
         console.log(name);
       }
+    );
+  }
+
+  userListGet(){
+    this.userService.userListGet().subscribe(
+      (result: UserResponse[]) => (this.userList=result)
     );
   }
 }

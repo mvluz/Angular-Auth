@@ -1,6 +1,6 @@
 export class UserResponse {
     id : number = 0;
-    username : string = '' ;
+    userName : string = '' ;
     passwordHash : string = '' ;
     passwordSalt : string = '' ;
 }

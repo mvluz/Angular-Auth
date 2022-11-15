@@ -1,0 +1,35 @@
+.example-card {
+    max-width: 400px;
+}
+
+.example-header-image {
+    background-image: url('https://icons.iconarchive.com/icons/chanut/role-playing/256/Villager-icon.png');
+    background-size: cover;
+}
+
+.content-center {
+    text-align: -webkit-center;
+}
+
+.example-tab-icon {
+    margin-right: 8px;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.example-full-width {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.mat-button {
+    margin-top: 10px;
+    width: 100%;
+    color: white;
+    height: 40px;
+    background-color: #3F51B5;
+}
