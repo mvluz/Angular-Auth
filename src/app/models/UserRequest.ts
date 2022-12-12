@@ -1,5 +1,5 @@
 export class UserRequest {
-    id : number = 0;
-    username : string = '';
+    userID :string = '';
+    userName : string = '';
     password : string = '';
 }
