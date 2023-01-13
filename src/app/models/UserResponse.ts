@@ -3,4 +3,5 @@ export class UserResponse {
     userName : string = '';
     passwordHash : string = '' ;
     passwordSalt : string = '' ;
+    token : string = '' ;
 }

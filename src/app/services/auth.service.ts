@@ -17,15 +17,9 @@ export class AuthService {
     ,user);
   }
 
-  public login(user: UserRequest): Observable<string> {
-    return this.http.post(`${environment.baseURLAuth}/login`
-      ,user
-      ,{responseType:'text'}/*  alterado o tipo padrão
-      *  de responsta de JsonObj para Text
-      *  devido o retorno da api 
-      *  ser uma string (token) 
-      */
-    );
+  public login(user: UserRequest): Observable<UserResponse> {
+    return this.http.post<UserResponse>(`${environment.baseURLAuth}/login`
+    ,user);
   }
 
   public getMe(): Observable<string> {

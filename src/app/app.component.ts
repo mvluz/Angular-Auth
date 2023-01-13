@@ -24,11 +24,7 @@ export class AppComponent {
   }
 
   login(user:UserRequest){
-    this.authService.login(user).subscribe(
-      (token : string) => {
-        localStorage.setItem('authToken', token);    
-      }
-    );
+    this.authService.login(user).subscribe();
   }
 
   getMe(){
